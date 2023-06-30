@@ -1,0 +1,22 @@
+server:
+  port: 23443
+spring:
+  application:
+    name: tiktok
+  datasource:
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://bt.00sg.cn:3306/asd
+    username: asd
+    password: asd123
+
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: assign_id
+  mapper-locations: classpath:/mapper/*.xml

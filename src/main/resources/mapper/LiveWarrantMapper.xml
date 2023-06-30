@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.api.tiktokapi.mapper.LiveWarrantMapper">
+
+    <resultMap id="BaseResultMap" type="com.api.tiktokapi.entity.LiveWarrant">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="liveId" column="live_id" jdbcType="VARCHAR"/>
+        <result property="device" column="device" jdbcType="VARCHAR"/>
+        <result property="expirationDate" column="expiration_date" jdbcType="TIMESTAMP"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="warrant" column="warrant" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,live_id,device,
+        expiration_date,create_time,remark,
+        warrant,status
+    </sql>
+    <update id="updateDeviceByLiveId">
+        UPDATE live_warrant
+        SET device=#{device}
+        WHERE live_id = #{liveId}
+    </update>
+</mapper>
